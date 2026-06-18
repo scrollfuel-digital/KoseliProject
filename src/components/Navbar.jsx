@@ -12,7 +12,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link to="/" className="flex items-center w-48">
             <img
-              src="/src/assets/logo.jpg"
+              src="/src/assets/logo.png"
               alt="RealEstate Logo"
               className="w-29 h-12 rounded-lg object-cover"
             />
