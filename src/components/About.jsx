@@ -3,92 +3,87 @@ import { FaLeaf, FaHandshake, FaMapMarkedAlt } from "react-icons/fa";
 
 export default function AboutUs() {
   return (
-    <section className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 py-24 px-6 text-white overflow-hidden">
-      
-      {/* Background Blur */}
-      <div className="absolute -top-32 -left-32 w-96 h-96 bg-emerald-500/20 rounded-full blur-3xl"></div>
-      <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl"></div>
-
-      <div className="relative max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+    <section className="bg-white py-24 px-6">
+      <div className="max-w-7xl mx-auto">
         
-        {/* LEFT CONTENT */}
-        <div>
-          <span className="inline-block bg-emerald-500/10 text-emerald-400 px-4 py-1 rounded-full text-sm mb-4">
-            Who We Are
+        {/* CENTER HEADING */}
+        <div className="text-center mb-20">
+          <span className="inline-flex items-center gap-2 bg-emerald-100 text-emerald-600 px-5 py-2 rounded-full text-sm font-medium mb-6">
+            <span className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span>
+            ABOUT US
           </span>
 
-          <h2 className="text-4xl md:text-5xl font-extrabold leading-tight mb-6">
-            Trusted Farm Plot Dealers 
-            <span className="text-emerald-400">in Nagpur</span>
+          <h2 className="text-4xl md:text-5xl font-extrabold leading-tight mb-6 text-gray-900">
+            Trusted Real Estate <br />
+            <span className="text-emerald-600">Farm Plot Dealer</span>
           </h2>
 
-          <p className="text-gray-300 mb-8 leading-relaxed">
-           We are a leading farm plot dealer in [City], helping clients find genuine and high-value land investment opportunities.
-With strong market knowledge and years of experience, we focus on:
+          <p className="text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            We are a leading farm plot dealer in <span className="font-medium text-emerald-600">[Nagpur]</span>,
+            helping clients find genuine and high-value land investment opportunities.
+            With strong market knowledge and years of experience, our goal is to make
+            property buying simple, secure, and profitable.
           </p>
-
-          {/* Bullet Points */}
-          <div className="space-y-4">
-            {[
-              "100% Legal Documentation",
-              "Prime Location Farm Plots",
-              "Transparent Pricing & Process",
-              "Long-Term Investment Security",
-            ].map((item, index) => (
-              <div key={index} className="flex items-center gap-3">
-                <HiCheckCircle className="text-emerald-400 text-xl" />
-                <span className="text-gray-200">{item}</span>
-              </div>
-            ))}
-          </div>
         </div>
 
-        {/* RIGHT CARDS */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        {/* CONTENT GRID */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           
-          {/* Card 1 */}
-          <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 hover:-translate-y-2 transition">
-            <FaLeaf className="text-emerald-400 text-3xl mb-4" />
-            <h3 className="text-xl font-semibold mb-2">Eco-Friendly Plots</h3>
-            <p className="text-gray-300 text-sm">
-              Green, pollution-free farm lands ideal for farming, resorts, and weekend homes.
-            </p>
+          {/* LEFT CONTENT */}
+          <div className="lg:col-span-1 -mt-30 pl-60">
+            <h3 className="text-3xl font-bold mb-6 text-gray-900">
+              What We Focus On
+            </h3>
+
+            <div className="space-y-4">
+              {[
+                "Complete Transparency in Every Deal",
+                "Customer Satisfaction & Trust",
+                "Safe & Secure Land Investment",
+              ].map((item, index) => (
+                <div key={index} className="flex items-center gap-3">
+                  <HiCheckCircle className="text-emerald-600 text-xl" />
+                  <span className="text-gray-700">{item}</span>
+                </div>
+              ))}
+            </div>
           </div>
 
-          {/* Card 2 */}
-          <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 hover:-translate-y-2 transition">
-            <FaHandshake className="text-blue-400 text-3xl mb-4" />
-            <h3 className="text-xl font-semibold mb-2">Trusted Deals</h3>
-            <p className="text-gray-300 text-sm">
-              Clear titles, honest pricing, and complete customer satisfaction.
-            </p>
-          </div>
+          {/* RIGHT CARDS */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            
+            <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-lg transition">
+              <FaLeaf className="text-emerald-600 text-3xl mb-4" />
+              <h4 className="text-xl font-semibold mb-2 text-gray-900">
+                Transparency
+              </h4>
+              <p className="text-gray-600 text-sm">
+                Honest pricing, clear documentation, and zero hidden charges.
+              </p>
+            </div>
 
-          {/* Card 3 */}
-          <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 hover:-translate-y-2 transition sm:col-span-2">
-            <FaMapMarkedAlt className="text-purple-400 text-3xl mb-4" />
-            <h3 className="text-xl font-semibold mb-2">Prime Locations</h3>
-            <p className="text-gray-300 text-sm">
-              Strategically located farm plots with strong future growth potential.
-            </p>
-          </div>
+            <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-lg transition">
+              <FaHandshake className="text-blue-600 text-3xl mb-4" />
+              <h4 className="text-xl font-semibold mb-2 text-gray-900">
+                Customer Satisfaction
+              </h4>
+              <p className="text-gray-600 text-sm">
+                We prioritize long-term relationships and client happiness.
+              </p>
+            </div>
 
+            <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-lg transition sm:col-span-2">
+              <FaMapMarkedAlt className="text-purple-600 text-3xl mb-4" />
+              <h4 className="text-xl font-semibold mb-2 text-gray-900">
+                Safe Investment
+              </h4>
+              <p className="text-gray-600 text-sm">
+                Secure farm plots with verified legal status and future growth.
+              </p>
+            </div>
+
+          </div>
         </div>
-      </div>
-
-      {/* STATS */}
-      <div className="relative max-w-6xl mx-auto mt-24 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-        {[
-          { value: "10+", label: "Years Experience" },
-          { value: "500+", label: "Happy Clients" },
-          { value: "1200+", label: "Plots Sold" },
-          { value: "100%", label: "Legal Verified" },
-        ].map((stat, index) => (
-          <div key={index} className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-xl py-6">
-            <h4 className="text-3xl font-bold text-emerald-400">{stat.value}</h4>
-            <p className="text-gray-300 text-sm mt-2">{stat.label}</p>
-          </div>
-        ))}
       </div>
     </section>
   );
