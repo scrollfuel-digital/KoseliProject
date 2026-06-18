@@ -8,35 +8,28 @@ export default function Navbar() {
   return (
     <nav className="fixed w-full top-0 z-50 bg-white shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+        <div className="flex items-center h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
+          <Link to="/" className="flex items-center w-48">
             <img
               src="/src/assets/logo.jpeg"
               alt="RealEstate Logo"
               className="w-12 h-12 rounded-lg object-cover"
             />
-           
           </Link>
 
-          {/* Search Bar */}
-          <div className="hidden md:flex items-center bg-gray-100 rounded-full px-4 py-2 w-64">
-            <HiMagnifyingGlass className="text-gray-600 text-xl pr-1" />
-            <input
-              type="text"
-              placeholder="Search properties..."
-              className="bg-transparent outline-none text-gray-700 placeholder-gray-500 w-full"
-            />
-          </div>
-
-          {/* Navigation Links */}
-          <div className="flex items-center space-x-6">
+          {/* Navigation Links - Center */}
+          <div className="flex flex-1 justify-center items-center space-x-6">
             <Link to="/" className="text-gray-700 hover:text-green-600 font-medium transition">
               Home
             </Link>
             <Link to="/about" className="text-gray-700 hover:text-green-600 font-medium transition">
               About
             </Link>
+
+
+
+
             <div 
               className="relative"
               onMouseEnter={() => setShowProjectsDropdown(true)}
@@ -83,6 +76,16 @@ export default function Navbar() {
             <Link to="/contact" className="text-gray-700 hover:text-green-600 font-medium transition">
               Contact Us
             </Link>
+          </div>
+
+          {/* Search Bar */}
+          <div className="hidden md:flex items-center bg-gray-100 rounded-full px-4 py-2 w-48">
+            <HiMagnifyingGlass className="text-gray-600 text-xl pr-1" />
+            <input
+              type="text"
+              placeholder="Search properties..."
+              className="bg-transparent outline-none text-gray-700 placeholder-gray-500 w-full"
+            />
           </div>
         </div>
       </div>

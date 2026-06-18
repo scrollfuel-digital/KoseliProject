@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
+import heroimg from '../assets/heroimg.jpg'
+import heroimg1 from '../assets/heroimg1.jpg'
+import heroimg2 from '../assets/heroimg2.jpg'
+import heroimg3 from '../assets/heroimg3.jpg'
 
 export default function Hero() {
-  const images = [
-    '/src/assets/hero1.jpg',
-    '/src/assets/hero2.jpg',
-    '/src/assets/hero3.jpg',
-  ]
+  const images = [heroimg, heroimg1, heroimg2, heroimg3]
 
   const [currentImage, setCurrentImage] = useState(0)
 
