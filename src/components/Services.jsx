@@ -8,39 +8,35 @@ import {
 
 export default function Services() {
   // 🔹 SERVICES ARRAY
-  const services = [
-    {
-      icon: HiHome,
-      title: "Farm Plot Buying & Selling",
-      description:
-        "We help you find the best farm plots according to your budget and requirements.",
-      gradient: "from-emerald-500 to-emerald-400",
-    },
-    {
-      icon: HiDocumentText,
-      title: "Legal Documentation Support",
-      points: ["Title verification", "Agreement process", "Registration"],
-      gradient: "from-purple-500 to-pink-400",
-    },
-    {
-      icon: HiLightBulb,
-      title: "Investment Consultation",
-      description:
-     <h1 className="text-lg font-semibold text-gray-900">
-          "We guide you to invest in locations with high growth and return potential.",
-        </h1>,
-      gradient: "from-orange-500 to-yellow-400",
-    },
-    {
-      icon: HiMapPin,
-      title: "Site Visit Assistance",
-      description:
-        <h1 className="text-lg font-semibold text-gray-900">
-          Arrange convenient site visits so you can explore the property before making a decision.
-        </h1> ,
-      gradient: "from-teal-500 to-cyan-400",
-    },
-  ];
+ const services = [
+  {
+    icon: HiHome,
+    title: "Farm Plot Buying & Selling",
+    description:
+      "We help you find the best farm plots according to your budget and requirements.",
+    gradient: "from-emerald-500 to-emerald-400",
+  },
+  {
+    icon: HiDocumentText,
+    title: "Legal Documentation Support",
+    points: ["Title verification", "Agreement process", "Registration"],
+    gradient: "from-emerald-500 to-emerald-400",
+  },
+  {
+    icon: HiLightBulb,
+    title: "Investment Consultation",
+    description:
+      "We guide you to invest in locations with high growth and return potential.",
+    gradient: "from-emerald-500 to-emerald-400",
+  },
+  {
+    icon: HiMapPin,
+    title: "Site Visit Assistance",
+    description:
+      "We arrange convenient site visits so you can explore the property before making a decision.",
+    gradient: "from-emerald-500 to-emerald-400",
+  },
+];
 
   return (
     <section className="py-20 px-4 bg-gray-50">
@@ -48,9 +44,9 @@ export default function Services() {
 
         {/* HEADING */}
         <div className="text-center mb-14">
-          <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-4">
-            SERVICES
-          </h2>
+<h2 className="font-heading text-6xl font-black tracking-[-0.02em] text-gray-900">
+  SERVICES
+</h2>
           <p className="text-lg text-gray-600">
             Comprehensive real estate solutions for your needs
           </p>
