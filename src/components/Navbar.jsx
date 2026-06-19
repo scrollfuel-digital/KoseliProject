@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { HiMagnifyingGlass } from 'react-icons/hi2'
 import { useState } from 'react'
+import logo from "../assets/logo.png";
 
 export default function Navbar() {
   const [showProjectsDropdown, setShowProjectsDropdown] = useState(false)
@@ -12,7 +13,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link to="/" className="flex items-center w-48">
             <img
-              src="/src/assets/logo.png"
+              src={logo}
               alt="RealEstate Logo"
               className="w-29 h-12 rounded-lg object-cover"
             />
