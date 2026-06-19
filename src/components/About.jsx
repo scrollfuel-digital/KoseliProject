@@ -19,7 +19,7 @@ export default function AboutUs() {
           </h2>
 
           <p className="text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            We are a leading farm plot dealer in <span className="font-medium text-emerald-600">[Nagpur]</span>,
+            We are a leading farm plot dealer in <span className="font-medium text-emerald-600">Nagpur</span>,
             helping clients find genuine and high-value land investment opportunities.
             With strong market knowledge and years of experience, our goal is to make
             property buying simple, secure, and profitable.
