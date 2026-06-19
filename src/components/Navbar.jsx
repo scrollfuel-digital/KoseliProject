@@ -41,13 +41,8 @@ function Tab({ children, to, setPosition }) {
     >
       <NavLink
         to={to}
-        className={({ isActive }) =>
-          `block px-5 py-2 text-sm font-medium uppercase transition-colors duration-300 ${
-            isActive
-              ? "text-black font-semibold"
-              : "text-gray-800 hover:text-white"
-          }`
-        }
+        end
+        className="block px-5 py-2 text-sm font-medium uppercase transition-colors duration-300 text-gray-800 hover:text-white"
       >
         {children}
       </NavLink>
@@ -99,13 +94,7 @@ function NavLinks() {
       >
         <NavLink
           to="/projects"
-          className={({ isActive }) =>
-            `block px-5 py-2 text-sm font-medium uppercase transition-colors duration-300 ${
-              isActive
-                ? "text-black font-semibold"
-                : "text-gray-800 hover:text-white"
-            }`
-          }
+          className="block px-5 py-2 text-sm font-medium uppercase transition-colors duration-300 text-gray-800 hover:text-white"
         >
           Projects
         </NavLink>
