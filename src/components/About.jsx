@@ -16,15 +16,15 @@ export default function AboutUs() {
       title: "Customer Satisfaction",
       desc: "We prioritize long-term relationships and client happiness.",
       icon: FaHandshake,
-      iconColor: "text-blue-600",
-      glow: "hover:shadow-[0_0_35px_rgba(59,130,246,0.55)]",
+      iconColor:  "text-emerald-600",
+      glow: "hover:shadow-[0_0_35px_rgba(16,185,129,0.55)]",
     },
     {
       title: "Safe Investment",
       desc: "Secure farm plots with verified legal status and future growth.",
       icon: FaMapMarkedAlt,
-      iconColor: "text-purple-600",
-      glow: "hover:shadow-[0_0_35px_rgba(168,85,247,0.55)]",
+      iconColor: "text-emerald-600",
+      glow: "hover:shadow-[0_0_35px_rgba(16,185,129,0.55)]",
     },
   ];
 
@@ -56,29 +56,40 @@ export default function AboutUs() {
         {/* CARDS GRID */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 place-items-center">
 
-          {cards.map((card, index) => {
-            const Icon = card.icon;
+        {cards.map((card, index) => {
+  const Icon = card.icon;
 
-            return (
-             <div
-  key={index}
-  className={`group relative bg-white rounded-2xl p-6 w-80
-              shadow-sm transition-all duration-300 ease-in-out
-              hover:-translate-y-3 hover:scale-105 ${card.glow}`}
->
-              
-                <Icon className={`${card.iconColor} text-3xl mb-4`} />
+  return (
+    <div
+      key={index}
+      className="group relative bg-white rounded-2xl p-6 w-80
+                 overflow-hidden shadow-sm
+                 transform transition-all duration-1000 ease-out
+                 hover:-translate-y-3 hover:shadow-xl"
+    >
+      {/* LEFT → RIGHT GLOW */}
+      <span
+        className="pointer-events-none absolute inset-y-0 left-0 w-0
+                   bg-emerald-400/30 blur-xl
+                   transition-all duration-700 ease-out
+                   group-hover:w-full"
+      />
 
-                <h4 className="text-xl font-semibold mb-2 text-gray-900">
-                  {card.title}
-                </h4>
+      {/* CONTENT */}
+      <div className="relative z-10">
+        <Icon className={`${card.iconColor} text-3xl mb-4`} />
 
-                <p className="text-gray-600 text-sm">
-                  {card.desc}
-                </p>
-              </div>
-            );
-          })}
+        <h4 className="text-xl font-semibold mb-2 text-gray-900">
+          {card.title}
+        </h4>
+
+        <p className="text-gray-600 text-sm">
+          {card.desc}
+        </p>
+      </div>
+    </div>
+  );
+})}
 
         </div>
       </div>
