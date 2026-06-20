@@ -1,146 +1,173 @@
-import { useState } from 'react'
-import { HiXMark, HiMapPin } from 'react-icons/hi2'
+import { useState } from "react";
+import { HiMapPin } from "react-icons/hi2";
 
-export default function ProjectsShowcase() {
-  const [selectedProject, setSelectedProject] = useState(null)
-
-  const projects = [
+export default function FarmPlotsWithFilters() {
+  const plots = [
     {
-      id: 1,
-      title: 'Plot in Green Valley',
-      image: 'https://images.unsplash.com/photo-1500382017468-7049e00a7a82?w=600&h=400&fit=crop',
-      size: '1000 sq ft',
-      price: '₹5,00,000',
-      location: 'Green Valley',
-      features: ['Road access', 'Water supply', 'Surrounded by greenery']
+      title: "Green Valley Plot",
+      image:
+        "https://images.unsplash.com/photo-1500382017468-7049e00a7a82?w=900&h=700&fit=crop",
+      location: "Green Valley",
+      size: 1000,
+      price: 500000,
     },
     {
-      id: 2,
-      title: 'Plot in Riverside',
-      image: 'https://images.unsplash.com/photo-1464207687429-7505649dae38?w=600&h=400&fit=crop',
-      size: '1500 sq ft',
-      price: '₹8,00,000',
-      location: 'Riverside Area',
-      features: ['Near highway', 'Peaceful location', 'Easy connectivity']
+      title: "Riverside Plot",
+      image:
+        "https://images.unsplash.com/photo-1464207687429-7505649dae38?w=900&h=700&fit=crop",
+      location: "Riverside Area",
+      size: 1500,
+      price: 800000,
     },
     {
-      id: 3,
-      title: 'Plot in Sunrise Hills',
-      image: 'https://images.unsplash.com/photo-1517457373614-b7152f800fd1?w=600&h=400&fit=crop',
-      size: '2000 sq ft',
-      price: '₹12,00,000',
-      location: 'Sunrise Hills',
-      features: ['Premium location', 'Scenic views', 'Investment opportunity']
-    }
-  ]
+      title: "Sunrise Hills Plot",
+      image:
+        "https://images.unsplash.com/photo-1517457373614-b7152f800fd1?w=900&h=700&fit=crop",
+      location: "Sunrise Hills",
+      size: 2000,
+      price: 1200000,
+    },
+  ];
+
+  /* ---------------- FILTER STATE ---------------- */
+  const [location, setLocation] = useState("All");
+  const [maxPrice, setMaxPrice] = useState(1500000);
+  const [minSize, setMinSize] = useState(0);
+
+  /* ---------------- FILTER LOGIC ---------------- */
+  const filteredPlots = plots.filter((plot) => {
+    return (
+      (location === "All" || plot.location === location) &&
+      plot.price <= maxPrice &&
+      plot.size >= minSize
+    );
+  });
 
   return (
-    <section className="py-20 px-4 bg-white">
+    <section className="py-20 bg-gray-50 px-4">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+        {/* Heading */}
+        <div className="text-center mb-14">
+          <h2 className="text-5xl font-black text-gray-900">
             Available Farm Plots
           </h2>
-          <p className="text-lg text-gray-600">
-            Explore our premium property listings
+          <p className="text-lg text-gray-600 mt-3">
+            Filter & explore premium land listings
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project) => (
-            <div
-              key={project.id}
-              onClick={() => setSelectedProject(project)}
-              className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all cursor-pointer hover:-translate-y-2"
-            >
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">{project.title}</h3>
-                <div className="flex items-center text-gray-600 mb-3">
-                  <HiMapPin className="mr-1" />
-                  <span>{project.location}</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <div>
-                    <p className="text-sm text-gray-500">Size</p>
-                    <p className="font-semibold text-gray-900">{project.size}</p>
-                  </div>
-                  <div className="text-right">
-                    <p className="text-sm text-gray-500">Price</p>
-                    <p className="font-bold text-green-600">{project.price}</p>
-                  </div>
-                </div>
-              </div>
+        {/* Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-10">
+          {/* FILTERS */}
+          <div className="bg-white rounded-3xl shadow-lg p-6 h-fit sticky top-24">
+            <h3 className="text-xl font-bold mb-6">Filters</h3>
+
+            {/* Location */}
+            <div className="mb-6">
+              <label className="block text-sm font-semibold mb-2">
+                Location
+              </label>
+              <select
+                value={location}
+                onChange={(e) => setLocation(e.target.value)}
+                className="w-full border rounded-lg px-3 py-2"
+              >
+                <option>All</option>
+                <option>Green Valley</option>
+                <option>Riverside Area</option>
+                <option>Sunrise Hills</option>
+              </select>
             </div>
-          ))}
-        </div>
 
-        {/* Modal */}
-        {selectedProject && (
-          <>
-            <div
-              onClick={() => setSelectedProject(null)}
-              className="fixed inset-0 bg-black/50 z-40"
-            />
-            <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-              <div className="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto relative">
-                <button
-                  onClick={() => setSelectedProject(null)}
-                  className="absolute top-4 right-4 bg-red-500 hover:bg-red-600 text-white p-2 rounded-full"
-                >
-                  <HiXMark size={24} />
-                </button>
+            {/* Size */}
+            <div className="mb-6">
+              <label className="block text-sm font-semibold mb-2">
+                Minimum Size (sq ft)
+              </label>
+              <select
+                value={minSize}
+                onChange={(e) => setMinSize(Number(e.target.value))}
+                className="w-full border rounded-lg px-3 py-2"
+              >
+                <option value={0}>Any</option>
+                <option value={1000}>1000+</option>
+                <option value={1500}>1500+</option>
+                <option value={2000}>2000+</option>
+              </select>
+            </div>
 
+            {/* Price */}
+            <div>
+              <label className="block text-sm font-semibold mb-2">
+                Max Price (₹)
+              </label>
+              <input
+                type="range"
+                min="500000"
+                max="1500000"
+                step="100000"
+                value={maxPrice}
+                onChange={(e) => setMaxPrice(Number(e.target.value))}
+                className="w-full"
+              />
+              <p className="text-sm mt-2 text-gray-600">
+                Up to ₹{maxPrice.toLocaleString()}
+              </p>
+            </div>
+          </div>
+
+          {/* CARDS GRID */}
+          <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+            {filteredPlots.map((plot, index) => (
+              <div
+                key={index}
+                className="group relative h-[420px] rounded-3xl overflow-hidden shadow-lg"
+              >
+                {/* Image */}
                 <img
-                  src={selectedProject.image}
-                  alt={selectedProject.title}
-                  className="w-full h-64 object-cover rounded-t-2xl"
+                  src={plot.image}
+                  alt={plot.title}
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
 
-                <div className="p-8">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-4">{selectedProject.title}</h2>
-                  
-                  <div className="flex items-center text-green-600 font-semibold mb-6">
+                {/* Price Badge */}
+                <div className="absolute top-5 right-5 z-20 bg-emerald-600 text-white px-4 py-1.5 rounded-full font-bold text-sm">
+                  ₹{plot.price.toLocaleString()}
+                </div>
+
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-70 group-hover:opacity-90 transition" />
+
+                {/* Content */}
+                <div className="absolute bottom-0 p-6 text-white translate-y-10 group-hover:translate-y-0 transition-all duration-500">
+                  <h3 className="text-2xl font-bold mb-2">
+                    {plot.title}
+                  </h3>
+
+                  <div className="flex items-center text-sm mb-2">
                     <HiMapPin className="mr-2" />
-                    {selectedProject.location}
+                    {plot.location}
                   </div>
 
-                  <div className="grid grid-cols-2 gap-4 mb-6">
-                    <div>
-                      <p className="text-gray-600 text-sm">Plot Size</p>
-                      <p className="text-2xl font-bold text-gray-900">{selectedProject.size}</p>
-                    </div>
-                    <div>
-                      <p className="text-gray-600 text-sm">Price</p>
-                      <p className="text-2xl font-bold text-green-600">{selectedProject.price}</p>
-                    </div>
-                  </div>
+                  <p className="text-sm mb-4">
+                    Plot Size: <span className="font-semibold">{plot.size} sq ft</span>
+                  </p>
 
-                  <div className="mb-6">
-                    <h3 className="text-lg font-semibold text-gray-900 mb-3">Features</h3>
-                    <ul className="space-y-2">
-                      {selectedProject.features.map((feature, i) => (
-                        <li key={i} className="flex items-center text-gray-700">
-                          <span className="w-2 h-2 bg-green-600 rounded-full mr-3"></span>
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <button className="w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-lg font-semibold transition">
-                    Contact Now
+                  <button className="bg-white text-gray-900 px-5 py-2 rounded-lg font-semibold hover:bg-emerald-600 hover:text-white transition">
+                    View Details
                   </button>
                 </div>
               </div>
-            </div>
-          </>
-        )}
+            ))}
+
+            {filteredPlots.length === 0 && (
+              <p className="col-span-full text-center text-gray-500">
+                No plots match the selected filters.
+              </p>
+            )}
+          </div>
+        </div>
       </div>
     </section>
-  )
+  );
 }
