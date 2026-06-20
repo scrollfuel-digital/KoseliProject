@@ -6,7 +6,7 @@ export default function FarmPlotsWithFilters() {
     {
       title: "Green Valley Plot",
       image:
-        "https://images.unsplash.com/photo-1500382017468-7049e00a7a82?w=900&h=700&fit=crop",
+        "https://reparv-assets.s3.ap-south-1.amazonaws.com/uploads/1756815240851.webp",
       location: "Green Valley",
       size: 1000,
       price: 500000,
@@ -22,7 +22,7 @@ export default function FarmPlotsWithFilters() {
     {
       title: "Sunrise Hills Plot",
       image:
-        "https://images.unsplash.com/photo-1517457373614-b7152f800fd1?w=900&h=700&fit=crop",
+        "https://therealtytoday.com/media/nagpur-_real_estate-_The_Realty_Today_RkBzuFs_3mTRR4u_pyGWjEU.jpg",
       location: "Sunrise Hills",
       size: 2000,
       price: 1200000,
@@ -59,7 +59,7 @@ export default function FarmPlotsWithFilters() {
         {/* Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-10">
           {/* FILTERS */}
-          <div className="bg-white rounded-3xl shadow-lg p-6 h-fit sticky top-24">
+          <div className="bg-[#f3f4f6] rounded-3xl shadow-lg p-6 h-fit sticky top-24 transition-all duration-300 ease-in-out hover:shadow-2xl hover:-translate-y-1 hover:scale-[1.02]">
             <h3 className="text-xl font-bold mb-6">Filters</h3>
 
             {/* Location */}
@@ -117,7 +117,7 @@ export default function FarmPlotsWithFilters() {
           </div>
 
           {/* CARDS GRID */}
-          <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+          <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-7 pb-20  ">
             {filteredPlots.map((plot, index) => (
               <div
                 key={index}
@@ -153,7 +153,7 @@ export default function FarmPlotsWithFilters() {
                     Plot Size: <span className="font-semibold">{plot.size} sq ft</span>
                   </p>
 
-                  <button className="bg-white text-gray-900 px-5 py-2 rounded-lg font-semibold hover:bg-emerald-600 hover:text-white transition">
+                  <button className="mt-2 bg-white text-gray-900 px-5 py-3  rounded-lg font-bold hover:bg-emerald-600 hover:text-white transition mb-8">
                     View Details
                   </button>
                 </div>
