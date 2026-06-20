@@ -8,35 +8,35 @@ import {
 
 export default function Services() {
   // 🔹 SERVICES ARRAY
- const services = [
-  {
-    icon: HiHome,
-    title: "Farm Plot Buying & Selling",
-    description:
-      "We help you find the best farm plots according to your budget and requirements.",
-    gradient: "from-emerald-500 to-emerald-400",
-  },
-  {
-    icon: HiDocumentText,
-    title: "Legal Documentation Support",
-    points: ["Title verification", "Agreement process", "Registration"],
-    gradient: "from-emerald-500 to-emerald-400",
-  },
-  {
-    icon: HiLightBulb,
-    title: "Investment Consultation",
-    description:
-      "We guide you to invest in locations with high growth and return potential.",
-    gradient: "from-emerald-500 to-emerald-400",
-  },
-  {
-    icon: HiMapPin,
-    title: "Site Visit Assistance",
-    description:
-      "We arrange convenient site visits so you can explore the property before making a decision.",
-    gradient: "from-emerald-500 to-emerald-400",
-  },
-];
+  const services = [
+    {
+      icon: HiHome,
+      title: "Farm Plot Buying & Selling",
+      description:
+        "We help you find the best farm plots according to your budget and requirements.",
+      gradient: "from-emerald-500 to-emerald-400",
+    },
+    {
+      icon: HiDocumentText,
+      title: "Legal Documentation Support",
+      points: ["Title verification", "Agreement process", "Registration"],
+      gradient: "from-emerald-500 to-emerald-400",
+    },
+    {
+      icon: HiLightBulb,
+      title: "Investment Consultation",
+      description:
+        "We guide you to invest in locations with high growth and return potential.",
+      gradient: "from-emerald-500 to-emerald-400",
+    },
+    {
+      icon: HiMapPin,
+      title: "Site Visit Assistance",
+      description:
+        "We arrange convenient site visits so you can explore the property before making a decision.",
+      gradient: "from-emerald-500 to-emerald-400",
+    },
+  ];
 
   return (
     <section className="py-20 px-4 bg-gray-50">
@@ -44,9 +44,9 @@ export default function Services() {
 
         {/* HEADING */}
         <div className="text-center mb-14">
-<h2 className="font-heading text-6xl font-black tracking-[-0.02em] text-gray-900">
-  SERVICES
-</h2>
+          <h2 className="font-heading text-xl font-black tracking-[-0.02em] text-gray-900">
+            SERVICES
+          </h2>
           <p className="text-lg text-gray-600">
             Comprehensive real estate solutions for your needs
           </p>
@@ -89,7 +89,7 @@ export default function Services() {
                   </svg>
 
                   {/* CONTENT */}
-                  <div className="relative z-10 px-6 pt-10 text-white text-sm">
+                  <div className="relative z-10 px-6 pt-10 text-white text-sm md:text-base lg:text-lg">
                     {service.description ? (
                       <p className="opacity-90">
                         {service.description}
