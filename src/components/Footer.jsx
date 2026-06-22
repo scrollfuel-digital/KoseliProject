@@ -1,18 +1,17 @@
 import { Link } from 'react-router-dom'
+import logo from '../assets/logo.png'
 import { HiPhone, HiEnvelope, HiMapPin } from 'react-icons/hi2'
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-white py-12 px-4">
-      <div className="max-w-7xl mx-auto">
+    <footer className="text-white py-12 px-4 relative" style={{ backgroundImage: `url(${logo})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+      <div className="absolute inset-0 bg-gray-900/80" />
+      <div className="max-w-7xl mx-auto relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
             <div className="flex items-center space-x-2 mb-4">
-              <div className="w-10 h-10 bg-green-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">RE</span>
-              </div>
-              <span className="font-bold text-xl">RealEstate</span>
+              <img src={logo} alt="Logo" className="h-10 w-auto" />
             </div>
             <p className="text-gray-400">
               Your trusted partner for farm plot investments and real estate solutions.
