@@ -43,10 +43,11 @@ export default function Services() {
       <div className="max-w-7xl mx-auto">
 
         {/* HEADING */}
-        <div className="text-center mb-14">
-          <h2 className="font-heading text-xl font-black tracking-[-0.02em] text-gray-900">
-            SERVICES
-          </h2>
+       <div className="text-center mb-14">
+  <h3 className="font-heading text-2xl md:text-3xl font-extrabold tracking-wide text-gray-900">
+    SERVICES
+  </h3>
+
           <p className="text-lg text-gray-600">
             Comprehensive real estate solutions for your needs
           </p>

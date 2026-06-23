@@ -1,12 +1,12 @@
-import Navbar from '../components/Navbar'
-import Footer from '../components/Footer'
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 import {
-        FiMapPin,
-        FiPhone,
-        FiMail,
-        FiCalendar,
-        FiSend,
-      } from "react-icons/fi";
+  FiMapPin,
+  FiPhone,
+  FiMail,
+  FiCalendar,
+  FiSend,
+} from "react-icons/fi";
 
 export default function ContactUs() {
   return (
