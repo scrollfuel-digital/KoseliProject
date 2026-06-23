@@ -1,79 +1,111 @@
-import { useState } from 'react'
-import Navbar from '../components/Navbar'
-import Footer from '../components/Footer'
-import { HiXMark, HiMapPin } from 'react-icons/hi2'
+import { useState } from "react";
+import { HiXMark, HiMapPin } from "react-icons/hi2";
 
 export default function Projects() {
-  const [selectedProject, setSelectedProject] = useState(null)
+  const [selectedProject, setSelectedProject] = useState(null);
 
   const projects = [
     {
       id: 1,
-      title: 'Green Valley Farm Plot',
-      image: 'https://images.unsplash.com/photo-1500382017468-7049e00a7a82?w=600&h=400&fit=crop',
-      size: '1000 sq ft',
-      price: '₹5,00,000',
-      location: 'Green Valley',
-      features: ['Road access', 'Water supply', 'Surrounded by greenery', 'Near main highway']
+      title: "Green Valley Farm Plot",
+      image:
+        "https://images.unsplash.com/photo-1500382017468-7049e00a7a82?w=600&h=400&fit=crop",
+      size: "1000 sq ft",
+      price: "₹5,00,000",
+      location: "Green Valley",
+      features: [
+        "Road access",
+        "Water supply",
+        "Surrounded by greenery",
+        "Near main highway",
+      ],
     },
     {
       id: 2,
-      title: 'Riverside Estate Plot',
-      image: 'https://images.unsplash.com/photo-1464207687429-7505649dae38?w=600&h=400&fit=crop',
-      size: '1500 sq ft',
-      price: '₹8,00,000',
-      location: 'Riverside Area',
-      features: ['Near highway', 'Peaceful location', 'Easy connectivity', 'Clear title']
+      title: "Riverside Estate Plot",
+      image:
+        "https://images.unsplash.com/photo-1464207687429-7505649dae38?w=600&h=400&fit=crop",
+      size: "1500 sq ft",
+      price: "₹8,00,000",
+      location: "Riverside Area",
+      features: [
+        "Near highway",
+        "Peaceful location",
+        "Easy connectivity",
+        "Clear title",
+      ],
     },
     {
       id: 3,
-      title: 'Sunrise Hills Premium',
-      image: 'https://images.unsplash.com/photo-1517457373614-b7152f800fd1?w=600&h=400&fit=crop',
-      size: '2000 sq ft',
-      price: '₹12,00,000',
-      location: 'Sunrise Hills',
-      features: ['Premium location', 'Scenic views', 'Investment opportunity', 'Gated community']
+      title: "Sunrise Hills Premium",
+      image:
+        "https://images.unsplash.com/photo-1517457373614-b7152f800fd1?w=600&h=400&fit=crop",
+      size: "2000 sq ft",
+      price: "₹12,00,000",
+      location: "Sunrise Hills",
+      features: [
+        "Premium location",
+        "Scenic views",
+        "Investment opportunity",
+        "Gated community",
+      ],
     },
     {
       id: 4,
-      title: 'Golden Meadows',
-      image: 'https://images.unsplash.com/photo-1500382017468-7049e00a7a82?w=600&h=400&fit=crop',
-      size: '1200 sq ft',
-      price: '₹6,50,000',
-      location: 'Golden Meadows',
-      features: ['Fertile land', 'Irrigation facility', 'Agriculture ready', 'Road access']
+      title: "Golden Meadows",
+      image:
+        "https://images.unsplash.com/photo-1500382017468-7049e00a7a82?w=600&h=400&fit=crop",
+      size: "1200 sq ft",
+      price: "₹6,50,000",
+      location: "Golden Meadows",
+      features: [
+        "Fertile land",
+        "Irrigation facility",
+        "Agriculture ready",
+        "Road access",
+      ],
     },
     {
       id: 5,
-      title: 'Mountain View Estate',
-      image: 'https://images.unsplash.com/photo-1464207687429-7505649dae38?w=600&h=400&fit=crop',
-      size: '1800 sq ft',
-      price: '₹10,00,000',
-      location: 'Mountain View',
-      features: ['Panoramic views', 'Premium locality', 'Near schools', 'Hospital nearby']
+      title: "Mountain View Estate",
+      image:
+        "https://images.unsplash.com/photo-1464207687429-7505649dae38?w=600&h=400&fit=crop",
+      size: "1800 sq ft",
+      price: "₹10,00,000",
+      location: "Mountain View",
+      features: [
+        "Panoramic views",
+        "Premium locality",
+        "Near schools",
+        "Hospital nearby",
+      ],
     },
     {
       id: 6,
-      title: 'Lakeside Paradise',
-      image: 'https://images.unsplash.com/photo-1517457373614-b7152f800fd1?w=600&h=400&fit=crop',
-      size: '2500 sq ft',
-      price: '₹15,00,000',
-      location: 'Lakeside',
-      features: ['Waterfront property', 'Luxury segment', 'High ROI', 'Resort potential']
-    }
-  ]
+      title: "Lakeside Paradise",
+      image:
+        "https://images.unsplash.com/photo-1517457373614-b7152f800fd1?w=600&h=400&fit=crop",
+      size: "2500 sq ft",
+      price: "₹15,00,000",
+      location: "Lakeside",
+      features: [
+        "Waterfront property",
+        "Luxury segment",
+        "High ROI",
+        "Resort potential",
+      ],
+    },
+  ];
 
   return (
-    <main>
-      <Navbar />
-      
+    <>
       <div className="pt-24 pb-20 px-4 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-              Our Projects
-            </h1>
-            <p className="text-xl text-gray-600">
+            <h2 className="text-5xl font-bold mt-4">
+              Our <span className="text-green-700 italic">Projects</span>
+            </h2>
+            <p className="text-xl text-gray-600 pt-4">
               Explore our premium farm plot listings
             </p>
           </div>
@@ -91,7 +123,9 @@ export default function Projects() {
                   className="w-full h-56 object-cover"
                 />
                 <div className="p-6">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-3">{project.title}</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                    {project.title}
+                  </h3>
                   <div className="flex items-center text-gray-600 mb-4">
                     <HiMapPin className="mr-2" />
                     <span>{project.location}</span>
@@ -99,11 +133,15 @@ export default function Projects() {
                   <div className="flex justify-between items-center border-t pt-4">
                     <div>
                       <p className="text-sm text-gray-500">Size</p>
-                      <p className="font-semibold text-gray-900">{project.size}</p>
+                      <p className="font-semibold text-gray-900">
+                        {project.size}
+                      </p>
                     </div>
                     <div className="text-right">
                       <p className="text-sm text-gray-500">Price</p>
-                      <p className="font-bold text-green-600 text-xl">{project.price}</p>
+                      <p className="font-bold text-green-600 text-xl">
+                        {project.price}
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -133,9 +171,11 @@ export default function Projects() {
                     className="w-full h-80 object-cover rounded-t-2xl"
                   />
 
-                      <div className="p-4 sm:p-8">
-                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">{selectedProject.title}</h2>
-                    
+                  <div className="p-4 sm:p-8">
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                      {selectedProject.title}
+                    </h2>
+
                     <div className="flex items-center text-green-600 font-semibold mb-6 text-lg">
                       <HiMapPin className="mr-2" size={24} />
                       {selectedProject.location}
@@ -144,19 +184,28 @@ export default function Projects() {
                     <div className="grid grid-cols-2 gap-4 sm:gap-6 mb-8 bg-gray-50 p-4 sm:p-6 rounded-xl">
                       <div>
                         <p className="text-gray-600 text-sm mb-1">Plot Size</p>
-                        <p className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900">{selectedProject.size}</p>
+                        <p className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900">
+                          {selectedProject.size}
+                        </p>
                       </div>
                       <div>
                         <p className="text-gray-600 text-sm mb-1">Price</p>
-                        <p className="text-xl sm:text-2xl md:text-3xl font-bold text-green-600">{selectedProject.price}</p>
+                        <p className="text-xl sm:text-2xl md:text-3xl font-bold text-green-600">
+                          {selectedProject.price}
+                        </p>
                       </div>
                     </div>
 
                     <div className="mb-8">
-                      <h3 className="text-2xl font-semibold text-gray-900 mb-4">Key Features</h3>
+                      <h3 className="text-2xl font-semibold text-gray-900 mb-4">
+                        Key Features
+                      </h3>
                       <ul className="grid grid-cols-2 gap-3">
                         {selectedProject.features.map((feature, i) => (
-                          <li key={i} className="flex items-center text-gray-700">
+                          <li
+                            key={i}
+                            className="flex items-center text-gray-700"
+                          >
                             <span className="w-2 h-2 bg-green-600 rounded-full mr-3"></span>
                             {feature}
                           </li>
@@ -174,8 +223,6 @@ export default function Projects() {
           )}
         </div>
       </div>
-
-      <Footer />
-    </main>
-  )
+    </>
+  );
 }
