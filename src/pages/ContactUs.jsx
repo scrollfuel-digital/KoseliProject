@@ -21,7 +21,7 @@ export default function ContactUs() {
                   Let's Grow Together
                 </p>
       
-                <h2 className="text-5xl font-bold mt-4">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-4">
                   Get in <span className="text-green-700 italic">Touch</span>
                 </h2>
       

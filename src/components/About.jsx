@@ -54,7 +54,7 @@ export default function AboutUs() {
         </div>
 
         {/* CARDS GRID */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 place-items-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
 
         {cards.map((card, index) => {
   const Icon = card.icon;
@@ -62,7 +62,7 @@ export default function AboutUs() {
   return (
     <div
       key={index}
-      className="group relative bg-white rounded-2xl p-6 w-80
+      className="group relative bg-white rounded-2xl p-6 w-full
                  overflow-hidden shadow-sm
                  transform transition-all duration-1000 ease-out
                  hover:-translate-y-3 hover:shadow-xl"

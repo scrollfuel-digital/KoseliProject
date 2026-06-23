@@ -70,7 +70,7 @@ export default function Projects() {
       <div className="pt-24 pb-20 px-4 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
               Our Projects
             </h1>
             <p className="text-xl text-gray-600">
@@ -133,22 +133,22 @@ export default function Projects() {
                     className="w-full h-80 object-cover rounded-t-2xl"
                   />
 
-                  <div className="p-8">
-                    <h2 className="text-4xl font-bold text-gray-900 mb-4">{selectedProject.title}</h2>
+                      <div className="p-4 sm:p-8">
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">{selectedProject.title}</h2>
                     
                     <div className="flex items-center text-green-600 font-semibold mb-6 text-lg">
                       <HiMapPin className="mr-2" size={24} />
                       {selectedProject.location}
                     </div>
 
-                    <div className="grid grid-cols-2 gap-6 mb-8 bg-gray-50 p-6 rounded-xl">
+                    <div className="grid grid-cols-2 gap-4 sm:gap-6 mb-8 bg-gray-50 p-4 sm:p-6 rounded-xl">
                       <div>
                         <p className="text-gray-600 text-sm mb-1">Plot Size</p>
-                        <p className="text-3xl font-bold text-gray-900">{selectedProject.size}</p>
+                        <p className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900">{selectedProject.size}</p>
                       </div>
                       <div>
                         <p className="text-gray-600 text-sm mb-1">Price</p>
-                        <p className="text-3xl font-bold text-green-600">{selectedProject.price}</p>
+                        <p className="text-xl sm:text-2xl md:text-3xl font-bold text-green-600">{selectedProject.price}</p>
                       </div>
                     </div>
 

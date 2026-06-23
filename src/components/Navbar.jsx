@@ -1,5 +1,5 @@
 import { NavLink, Link } from "react-router-dom";
-import { HiMagnifyingGlass } from "react-icons/hi2";
+import { HiMagnifyingGlass, HiBars3, HiXMark } from "react-icons/hi2";
 import { motion } from "framer-motion";
 import { useState, useRef } from "react";
 
@@ -193,64 +193,77 @@ function NavLinks() {
 }
 
 export default function Navbar() {
+  const [mobileOpen, setMobileOpen] = useState(false);
+
   return (
     <nav className="fixed top-0 w-full z-50 bg-white shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center w-48">
-            <img
-              src={logo}
-              alt="Logo"
-              className="h-12 w-auto object-contain rounded"
-            />
+          <Link to="/" className="flex items-center w-32 sm:w-40">
+            <img src={logo} alt="Logo" className="h-10 sm:h-12 w-auto object-contain rounded" />
           </Link>
 
-          {/* Navigation */}
-          <div className="flex-1 flex justify-center">
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex flex-1 justify-center">
             <NavLinks />
           </div>
 
-          {/* Search */}
+          {/* Desktop Search */}
           <div className="hidden md:flex items-center">
-            <div className="relative group">
+            <div className="relative">
               <input
                 type="text"
                 placeholder="Search properties..."
-                className="
-                  w-60
-                  pl-12
-                  pr-4
-                  py-3
-                  rounded-full
-                  border
-                  border-gray-300
-                  bg-white
-                  text-gray-700
-                  placeholder-gray-400
-                  outline-none
-                  transition-all
-                  duration-300
-                  focus:w-72
-                  focus:border-green-500
-                  focus:shadow-lg
-                "
+                className="w-52 lg:w-60 pl-10 pr-4 py-2.5 rounded-full border border-gray-300 bg-white text-gray-700 placeholder-gray-400 outline-none transition-all duration-300 focus:w-64 lg:focus:w-72 focus:border-green-500"
               />
-
-              <HiMagnifyingGlass
-                className="
-                  absolute
-                  left-4
-                  top-1/2
-                  -translate-y-1/2
-                  text-gray-500
-                  text-xl
-                "
-              />
+              <HiMagnifyingGlass className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-lg" />
             </div>
           </div>
+
+          {/* Mobile Hamburger */}
+          <button
+            className="md:hidden ml-auto p-2 text-gray-700"
+            onClick={() => setMobileOpen(!mobileOpen)}
+          >
+            {mobileOpen ? <HiXMark size={26} /> : <HiBars3 size={26} />}
+          </button>
         </div>
       </div>
+
+      {/* Mobile Menu */}
+      {mobileOpen && (
+        <div className="md:hidden bg-white border-t shadow-lg px-4 py-4 space-y-2">
+          {[
+            { to: "/", label: "Home" },
+            { to: "/about", label: "About" },
+            { to: "/projects", label: "Projects" },
+            { to: "/contact", label: "Contact Us" },
+          ].map(({ to, label }) => (
+            <NavLink
+              key={to}
+              to={to}
+              end
+              onClick={() => setMobileOpen(false)}
+              className={({ isActive }) =>
+                `block px-4 py-2.5 rounded-lg font-medium text-sm uppercase transition ${
+                  isActive ? "bg-green-500 text-white" : "text-gray-700 hover:bg-gray-100"
+                }`
+              }
+            >
+              {label}
+            </NavLink>
+          ))}
+          <div className="relative pt-2">
+            <input
+              type="text"
+              placeholder="Search properties..."
+              className="w-full pl-10 pr-4 py-2.5 rounded-full border border-gray-300 outline-none focus:border-green-500"
+            />
+            <HiMagnifyingGlass className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 text-lg mt-1" />
+          </div>
+        </div>
+      )}
     </nav>
   );
 }

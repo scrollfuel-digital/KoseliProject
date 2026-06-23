@@ -48,7 +48,7 @@ export default function FarmPlotsWithFilters() {
       <div className="max-w-7xl mx-auto">
         {/* Heading */}
         <div className="text-center mb-14">
-          <h2 className="text-5xl font-black text-gray-900">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900">
             Available Farm Plots
           </h2>
           <p className="text-lg text-gray-600 mt-3">
@@ -59,7 +59,7 @@ export default function FarmPlotsWithFilters() {
         {/* Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-10">
           {/* FILTERS */}
-          <div className="bg-[#f3f4f6] rounded-3xl shadow-lg p-6 h-fit sticky top-24 transition-all duration-300 ease-in-out hover:shadow-2xl hover:-translate-y-1 hover:scale-[1.02]">
+          <div className="bg-[#f3f4f6] rounded-3xl shadow-lg p-6 h-fit lg:sticky top-24 transition-all duration-300 ease-in-out hover:shadow-2xl hover:-translate-y-1 hover:scale-[1.02]">
             <h3 className="text-xl font-bold mb-6">Filters</h3>
 
             {/* Location */}
