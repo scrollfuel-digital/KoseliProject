@@ -34,7 +34,8 @@ export default function AboutUs() {
         <div className="text-center mb-20">
           <span className="inline-flex items-center gap-2 bg-emerald-100 text-emerald-600 px-5 py-2 rounded-full text-sm font-medium mb-6">
             <span className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span>
-            ABOUT US
+            
+            <div className="text-2xl">ABOUT US</div>
           </span>
 
           <h2 className="text-4xl md:text-5xl font-extrabold leading-tight mb-6 text-gray-900">
