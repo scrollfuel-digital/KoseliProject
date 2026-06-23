@@ -15,8 +15,7 @@ import {
 export default function About() {
   return (
     <>
-      <Navbar />
-
+  
       <section className="pt-24 bg-white">
         {/* Hero Section */}
         <div className="max-w-7xl mx-auto px-4 py-6">
@@ -250,7 +249,6 @@ export default function About() {
         </div>
       </section>
 
-      <Footer />
     </>
   );
 }

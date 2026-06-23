@@ -1,10 +1,5 @@
 import { h2 } from "framer-motion/client";
-import {
-  HiHome,
-  HiDocumentText,
-  HiLightBulb,
-  HiMapPin,
-} from "react-icons/hi2";
+import { HiHome, HiDocumentText, HiLightBulb, HiMapPin } from "react-icons/hi2";
 
 export default function Services() {
   // 🔹 SERVICES ARRAY
@@ -41,12 +36,11 @@ export default function Services() {
   return (
     <section className="py-20 px-4 bg-gray-50">
       <div className="max-w-7xl mx-auto">
-
         {/* HEADING */}
-       <div className="text-center mb-14">
-  <h3 className="font-heading text-2xl md:text-3xl font-extrabold tracking-wide text-gray-900">
-    SERVICES
-  </h3>
+        <div className="text-center mb-14">
+          <h3 className="font-heading text-2xl md:text-3xl font-extrabold tracking-wide text-gray-900">
+            SERVICES
+          </h3>
 
           <p className="text-lg text-gray-600">
             Comprehensive real estate solutions for your needs
@@ -92,9 +86,7 @@ export default function Services() {
                   {/* CONTENT */}
                   <div className="relative z-10 px-6 pt-10 text-white text-sm md:text-base lg:text-lg">
                     {service.description ? (
-                      <p className="opacity-90">
-                        {service.description}
-                      </p>
+                      <p className="opacity-90">{service.description}</p>
                     ) : (
                       <ul className="space-y-1 list-disc pl-4 opacity-90">
                         {service.points.map((point, i) => (
@@ -108,7 +100,6 @@ export default function Services() {
             );
           })}
         </div>
-
       </div>
     </section>
   );

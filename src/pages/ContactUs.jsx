@@ -10,8 +10,7 @@ import {
 
 export default function ContactUs() {
   return (
-    <main>
-      <Navbar />
+    <>
           <section className="bg-[#eef6ea] py-20 px-4">
             <div className="max-w-6xl mx-auto">
       
@@ -216,7 +215,6 @@ export default function ContactUs() {
               </div>
             </div>
           </section>
-      <Footer />
-    </main>
+     </>
   )
 }
