@@ -47,7 +47,7 @@ export default function FarmPlotsWithFilters() {
     <section className="py-20 bg-gray-50 px-4">
       <div className="max-w-7xl mx-auto">
         {/* Heading */}
-        <div className="text-center mb-14">
+        <div className="text-center mb-14 pr-15">
           <h2 className="text-5xl font-black text-gray-900">
             Available Farm Plots
           </h2>
