@@ -30,7 +30,7 @@ export default function ContactSection() {
             {/* Office Card */}
             <div className="bg-white rounded-2xl p-5 border-0 shadow-md hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 ease-out">
               <div className="flex items-start gap-4">
-                <div className="bg-green-700 text-white p-3 rounded-full">
+                <div className="bg-green-100 text-green-700 p-3 rounded-full">
                   <FiMapPin />
                 </div>
 

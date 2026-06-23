@@ -70,7 +70,7 @@ export default function FarmPlotsWithFilters() {
               <select
                 value={location}
                 onChange={(e) => setLocation(e.target.value)}
-                className="w-full border rounded-lg px-3 py-2"
+                className="w-full border rounded-lg px-2 py-2"
               >
                 <option>All</option>
                 <option>Green Valley</option>
@@ -144,16 +144,13 @@ export default function FarmPlotsWithFilters() {
                     {plot.title}
                   </h3>
 
-                  <div className="flex items-center text-sm mb-2">
-                    <HiMapPin className="mr-2" />
-                    {plot.location}
-                  </div>
+                  
 
                   <p className="text-sm mb-4">
                     Plot Size: <span className="font-semibold">{plot.size} sq ft</span>
                   </p>
 
-                  <button className="mt-2 bg-white text-gray-900 px-5 py-3  rounded-lg font-bold hover:bg-emerald-600 hover:text-white transition mb-8">
+                  <button className="mt-2 bg-white text-gray-900 px-5 py-3  rounded-lg font-bold hover:bg-emerald-600 hover:text-white-500 transition mb-8">
                     View Details
                   </button>
                 </div>
