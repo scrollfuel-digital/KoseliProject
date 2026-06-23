@@ -21,7 +21,7 @@ export default function About() {
         {/* Hero Section */}
         <div className="max-w-7xl mx-auto px-4 py-6">
           <div className="text-center">
-            <span className="text-green-700 font-semibold uppercase tracking-wider">
+            <span className="text-green-700 text-3xl font-semibold uppercase tracking-wider">
               About Our Company
             </span>
 
@@ -123,8 +123,8 @@ export default function About() {
                 {/* Left Column */}
                 <div className="flex flex-col gap-6">
                   <div className="hexagon shadow-lg">
-                    <div className="text-center">
-                      <HiOutlineMapPin className="text-green-700 text-4xl mx-auto mb-4" />
+                    <div className="text-center p-2">
+                      <HiOutlineMapPin className="text-green-700 text-4xl mx-auto mb-4 " />
                       <h3 className="font-bold text-lg mb-2">
                         Prime Locations
                       </h3>
@@ -135,7 +135,7 @@ export default function About() {
                   </div>
 
                   <div className="hexagon shadow-lg">
-                    <div className="text-center">
+                    <div className="text-center p-2">
                       <HiOutlineUsers className="text-green-700 text-4xl mx-auto mb-4" />
                       <h3 className="font-bold text-lg mb-2">Customer First</h3>
                       <p className="text-sm text-gray-600">
@@ -148,7 +148,7 @@ export default function About() {
                 {/* Center Left */}
                 <div className="-mx-10">
                   <div className="hexagon shadow-lg">
-                    <div className="text-center">
+                    <div className="text-center p-2">
                       <HiOutlineBuildingOffice2 className="text-green-700 text-4xl mx-auto mb-4" />
                       <h3 className="font-bold text-lg mb-2">
                         Premium Projects
@@ -163,7 +163,7 @@ export default function About() {
                 {/* Center Column */}
                 <div className="flex flex-col gap-6">
                   <div className="hexagon shadow-lg">
-                    <div className="text-center">
+                    <div className="text-center p-2">
                       <HiOutlineShieldCheck className="text-green-700 text-4xl mx-auto mb-4" />
                       <h3 className="font-bold text-lg mb-2">
                         Verified & Legal
@@ -175,7 +175,7 @@ export default function About() {
                   </div>
 
                   <div className="hexagon shadow-lg">
-                    <div className="text-center">
+                    <div className="text-center p-2">
                       <HiOutlineArrowTrendingUp className="text-green-700 text-4xl mx-auto mb-4" />
                       <h3 className="font-bold text-lg mb-2">High Returns</h3>
                       <p className="text-sm text-gray-600">
@@ -188,12 +188,12 @@ export default function About() {
                 {/* Center Right */}
                 <div className="-mx-10">
                   <div className="hexagon shadow-lg">
-                    <div className="text-center">
+                    <div className="text-center ">
                       <HiCheckCircle className="text-green-700 text-4xl mx-auto mb-4" />
                       <h3 className="font-bold text-lg mb-2">
                         Trusted Investment
                       </h3>
-                      <p className="text-sm text-gray-600">
+                      <p className="text-sm text-gray-600 p-2">
                         Secure and transparent property transactions.
                       </p>
                     </div>
@@ -203,7 +203,7 @@ export default function About() {
                 {/* Right Column */}
                 <div className="flex flex-col gap-6">
                   <div className="hexagon shadow-lg">
-                    <div className="text-center">
+                    <div className="text-center p-2">
                       <HiOutlineShieldCheck className="text-green-700 text-4xl mx-auto mb-4" />
                       <h3 className="font-bold text-lg mb-2">Safety</h3>
                       <p className="text-sm text-gray-600">
@@ -213,7 +213,7 @@ export default function About() {
                   </div>
 
                   <div className="hexagon shadow-lg">
-                    <div className="text-center">
+                    <div className="text-center p-2">
                       <HiOutlineUsers className="text-green-700 text-4xl mx-auto mb-4" />
                       <h3 className="font-bold text-lg mb-2">Expert Team</h3>
                       <p className="text-sm text-gray-600">
