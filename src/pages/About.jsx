@@ -15,17 +15,16 @@ import {
 export default function About() {
   return (
     <>
-      <Navbar />
-
+  
       <section className="pt-24 bg-white">
         {/* Hero Section */}
         <div className="max-w-7xl mx-auto px-4 py-6">
           <div className="text-center">
-            <span className="text-green-700 font-semibold uppercase tracking-wider">
+            <span className="text-green-700 text-xl sm:text-2xl md:text-3xl font-semibold uppercase tracking-wider">
               About Our Company
             </span>
 
-            <h3 className="text-4xl md:text-4xl font-bold text-gray-900 mt-4 mb-6">
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mt-4 mb-6">
               Trusted Partner For
               <span className="text-green-700"> Farm Plot Investments</span>
             </h3>
@@ -50,7 +49,7 @@ export default function About() {
             </div>
 
             <div>
-              <div className="text-green-700 font-semibold text-5xl mb-8">
+              <div className="text-green-700 font-semibold text-3xl sm:text-4xl md:text-5xl mb-8">
                 OUR STORY
               </div>
 
@@ -107,7 +106,7 @@ export default function About() {
           <div className="max-w-7xl mx-auto px-4">
             {/* why choose us  */}
             <div className="text-center mb-10">
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mt-3">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mt-3">
                 Why Choose Koseli Projects?
               </h2>
 
@@ -123,8 +122,8 @@ export default function About() {
                 {/* Left Column */}
                 <div className="flex flex-col gap-6">
                   <div className="hexagon shadow-lg">
-                    <div className="text-center">
-                      <HiOutlineMapPin className="text-green-700 text-4xl mx-auto mb-4" />
+                    <div className="text-center p-2">
+                      <HiOutlineMapPin className="text-green-700 text-4xl mx-auto mb-4 " />
                       <h3 className="font-bold text-lg mb-2">
                         Prime Locations
                       </h3>
@@ -135,7 +134,7 @@ export default function About() {
                   </div>
 
                   <div className="hexagon shadow-lg">
-                    <div className="text-center">
+                    <div className="text-center p-2">
                       <HiOutlineUsers className="text-green-700 text-4xl mx-auto mb-4" />
                       <h3 className="font-bold text-lg mb-2">Customer First</h3>
                       <p className="text-sm text-gray-600">
@@ -148,7 +147,7 @@ export default function About() {
                 {/* Center Left */}
                 <div className="-mx-10">
                   <div className="hexagon shadow-lg">
-                    <div className="text-center">
+                    <div className="text-center p-2">
                       <HiOutlineBuildingOffice2 className="text-green-700 text-4xl mx-auto mb-4" />
                       <h3 className="font-bold text-lg mb-2">
                         Premium Projects
@@ -163,7 +162,7 @@ export default function About() {
                 {/* Center Column */}
                 <div className="flex flex-col gap-6">
                   <div className="hexagon shadow-lg">
-                    <div className="text-center">
+                    <div className="text-center p-2">
                       <HiOutlineShieldCheck className="text-green-700 text-4xl mx-auto mb-4" />
                       <h3 className="font-bold text-lg mb-2">
                         Verified & Legal
@@ -175,7 +174,7 @@ export default function About() {
                   </div>
 
                   <div className="hexagon shadow-lg">
-                    <div className="text-center">
+                    <div className="text-center p-2">
                       <HiOutlineArrowTrendingUp className="text-green-700 text-4xl mx-auto mb-4" />
                       <h3 className="font-bold text-lg mb-2">High Returns</h3>
                       <p className="text-sm text-gray-600">
@@ -188,12 +187,12 @@ export default function About() {
                 {/* Center Right */}
                 <div className="-mx-10">
                   <div className="hexagon shadow-lg">
-                    <div className="text-center">
+                    <div className="text-center ">
                       <HiCheckCircle className="text-green-700 text-4xl mx-auto mb-4" />
                       <h3 className="font-bold text-lg mb-2">
                         Trusted Investment
                       </h3>
-                      <p className="text-sm text-gray-600">
+                      <p className="text-sm text-gray-600 p-2">
                         Secure and transparent property transactions.
                       </p>
                     </div>
@@ -203,7 +202,7 @@ export default function About() {
                 {/* Right Column */}
                 <div className="flex flex-col gap-6">
                   <div className="hexagon shadow-lg">
-                    <div className="text-center">
+                    <div className="text-center p-2">
                       <HiOutlineShieldCheck className="text-green-700 text-4xl mx-auto mb-4" />
                       <h3 className="font-bold text-lg mb-2">Safety</h3>
                       <p className="text-sm text-gray-600">
@@ -213,7 +212,7 @@ export default function About() {
                   </div>
 
                   <div className="hexagon shadow-lg">
-                    <div className="text-center">
+                    <div className="text-center p-2">
                       <HiOutlineUsers className="text-green-700 text-4xl mx-auto mb-4" />
                       <h3 className="font-bold text-lg mb-2">Expert Team</h3>
                       <p className="text-sm text-gray-600">
@@ -250,7 +249,6 @@ export default function About() {
         </div>
       </section>
 
-      <Footer />
     </>
   );
 }

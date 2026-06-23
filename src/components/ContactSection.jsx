@@ -11,9 +11,9 @@ export default function ContactSection() {
             Let's Grow Together
           </p>
 
-          <h2 className="text-5xl font-bold mt-4">
-            Get in <span className="text-green-700 italic">Touch</span>
-          </h2>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-4">
+              Get in <span className="text-green-700 italic">Touch</span>
+            </h2>
 
           <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
             Interested in owning your own farmland? Our team is here to walk
