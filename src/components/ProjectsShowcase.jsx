@@ -109,7 +109,7 @@ export default function FarmPlotsWithFilters() {
           </div>
 
           {/* CARDS GRID */}
-          <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-7 pb-20">
+          <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-7 pb-20 ">
             {filteredPlots.map((plot, index) => (
               <div
                 key={index}
@@ -139,7 +139,7 @@ export default function FarmPlotsWithFilters() {
                     <span className="font-semibold">{plot.size} sq ft</span>
                   </p>
 
-                  <button className="bg-white text-gray-900 px-5 py-3 rounded-lg font-bold hover:bg-emerald-600 hover:text-white transition">
+                  <button className="bg-white text-gray-900 px-5 py-3 rounded-lg font-bold hover:bg-emerald-600 hover:text-white transition duration-300 mb-8">
                     View Details
                   </button>
                 </div>
