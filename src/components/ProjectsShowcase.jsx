@@ -48,9 +48,11 @@ export default function FarmPlotsWithFilters() {
       <div className="max-w-7xl mx-auto">
         {/* Heading */}
         <div className="text-center mb-14">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900">
-            Available Farm Plots
-          </h2>
+          <span className="inline-flex items-center gap-2 bg-emerald-100 text-emerald-600 px-5 py-2 rounded-full text-sm font-medium mb-6">
+            <span className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span>
+
+            <div className="text-2xl">Available Farm Plots</div>
+          </span>
           <p className="text-lg text-gray-600 mt-3">
             Filter & explore premium land listings
           </p>
@@ -140,14 +142,11 @@ export default function FarmPlotsWithFilters() {
 
                 {/* Content */}
                 <div className="absolute bottom-0 p-6 text-white translate-y-10 group-hover:translate-y-0 transition-all duration-500">
-                  <h3 className="text-2xl font-bold mb-2">
-                    {plot.title}
-                  </h3>
-
-                  
+                  <h3 className="text-2xl font-bold mb-2">{plot.title}</h3>
 
                   <p className="text-sm mb-4">
-                    Plot Size: <span className="font-semibold">{plot.size} sq ft</span>
+                    Plot Size:{" "}
+                    <span className="font-semibold">{plot.size} sq ft</span>
                   </p>
 
                   <button className="mt-2 bg-white text-gray-900 px-5 py-3  rounded-lg font-bold hover:bg-emerald-600 hover:text-white-500 transition mb-8">
