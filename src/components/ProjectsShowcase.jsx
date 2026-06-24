@@ -1,33 +1,20 @@
 import { useState } from "react";
 import { HiMapPin } from "react-icons/hi2";
-
 export default function FarmPlotsWithFilters() {
-  const plots = [
-    {
-      title: "Green Valley Plot",
-      image:
-        "https://reparv-assets.s3.ap-south-1.amazonaws.com/uploads/1756815240851.webp",
-      location: "Green Valley",
-      size: 1000,
-      price: 500000,
-    },
-    {
-      title: "Riverside Plot",
-      image:
-        "https://images.unsplash.com/photo-1464207687429-7505649dae38?w=900&h=700&fit=crop",
-      location: "Riverside Area",
-      size: 1500,
-      price: 800000,
-    },
-    {
-      title: "Sunrise Hills Plot",
-      image:
-        "https://therealtytoday.com/media/nagpur-_real_estate-_The_Realty_Today_RkBzuFs_3mTRR4u_pyGWjEU.jpg",
-      location: "Sunrise Hills",
-      size: 2000,
-      price: 1200000,
-    },
-  ];
+
+  const plots = [{
+    title: "Green Valley Plot",
+    image: "https://reparv-assets.s3.ap-south-1.amazonaws.com/uploads/1756815240851.webp",
+    location: "Green Valley", size: 1000, price: 500000,
+  }, {
+    title: "Riverside Plot",
+    image: "https://images.unsplash.com/photo-1464207687429-7505649dae38?w=900&h=700&fit=crop",
+    location: "Riverside Area", size: 1500, price: 800000,
+  }, {
+    title: "Sunrise Hills Plot",
+    image: "https://therealtytoday.com/media/nagpur-_real_estate-_The_Realty_Today_RkBzuFs_3mTRR4u_pyGWjEU.jpg",
+    location: "Sunrise Hills", size: 2000, price: 1200000,
+  },];
 
   /* ---------------- FILTER STATE ---------------- */
   const [location, setLocation] = useState("All");
@@ -61,41 +48,44 @@ export default function FarmPlotsWithFilters() {
         {/* Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-10">
           {/* FILTERS */}
-          <div className="bg-[#f3f4f6] rounded-3xl shadow-lg p-6 h-fit lg:sticky top-24 transition-all duration-300 ease-in-out hover:shadow-2xl hover:-translate-y-1 hover:scale-[1.02]">
+          <div className="bg-[#f3f4f6] rounded-3xl shadow-lg p-6 h-fit lg:sticky top-24">
             <h3 className="text-xl font-bold mb-6">Filters</h3>
 
-            {/* Location */}
-            <div className="mb-6">
-              <label className="block text-sm font-semibold mb-2">
-                Location
-              </label>
-              <select
-                value={location}
-                onChange={(e) => setLocation(e.target.value)}
-                className="w-full border rounded-lg px-2 py-2"
-              >
-                <option>All</option>
-                <option>Green Valley</option>
-                <option>Riverside Area</option>
-                <option>Sunrise Hills</option>
-              </select>
-            </div>
+            {/* Mobile: Location + Size in one row */}
+            <div className="flex gap-4 mb-6 lg:flex-col">
+              {/* Location */}
+              <div className="flex-1">
+                <label className="block text-sm font-semibold mb-2">
+                  Location
+                </label>
+                <select
+                  value={location}
+                  onChange={(e) => setLocation(e.target.value)}
+                  className="w-full border rounded-lg px-3 py-2 text-sm"
+                >
+                  <option>All</option>
+                  <option>Green Valley</option>
+                  <option>Riverside Area</option>
+                  <option>Sunrise Hills</option>
+                </select>
+              </div>
 
-            {/* Size */}
-            <div className="mb-6">
-              <label className="block text-sm font-semibold mb-2">
-                Minimum Size (sq ft)
-              </label>
-              <select
-                value={minSize}
-                onChange={(e) => setMinSize(Number(e.target.value))}
-                className="w-full border rounded-lg px-3 py-2"
-              >
-                <option value={0}>Any</option>
-                <option value={1000}>1000+</option>
-                <option value={1500}>1500+</option>
-                <option value={2000}>2000+</option>
-              </select>
+              {/* Minimum Size */}
+              <div className="flex-1">
+                <label className="block text-sm font-semibold mb-2">
+                  Min Size
+                </label>
+                <select
+                  value={minSize}
+                  onChange={(e) => setMinSize(Number(e.target.value))}
+                  className="w-full border rounded-lg px-3 py-2 text-sm"
+                >
+                  <option value={0}>Any</option>
+                  <option value={1000}>1000+</option>
+                  <option value={1500}>1500+</option>
+                  <option value={2000}>2000+</option>
+                </select>
+              </div>
             </div>
 
             {/* Price */}
@@ -119,7 +109,7 @@ export default function FarmPlotsWithFilters() {
           </div>
 
           {/* CARDS GRID */}
-          <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-7 pb-20  ">
+          <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-7 pb-20">
             {filteredPlots.map((plot, index) => (
               <div
                 key={index}
@@ -138,7 +128,7 @@ export default function FarmPlotsWithFilters() {
                 </div>
 
                 {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-70 group-hover:opacity-90 transition" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-80" />
 
                 {/* Content */}
                 <div className="absolute bottom-0 p-6 text-white translate-y-10 group-hover:translate-y-0 transition-all duration-500">
@@ -149,7 +139,7 @@ export default function FarmPlotsWithFilters() {
                     <span className="font-semibold">{plot.size} sq ft</span>
                   </p>
 
-                  <button className="mt-2 bg-white text-gray-900 px-5 py-3  rounded-lg font-bold hover:bg-emerald-600 hover:text-white-500 transition mb-8">
+                  <button className="bg-white text-gray-900 px-5 py-3 rounded-lg font-bold hover:bg-emerald-600 hover:text-white transition">
                     View Details
                   </button>
                 </div>
