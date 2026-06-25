@@ -59,22 +59,24 @@ export default function AboutUs() {
 
             return (
               <div
-                key={index}
-                className="group relative bg-white rounded-2xl p-6 w-full
+                 key={index}
+                 className="group relative bg-white p-6 w-full
                  overflow-hidden shadow-sm
                  transform transition-all duration-1000 ease-out
-                 hover:-translate-y-3 hover:shadow-xl"
-              >
+                 hover:-translate-y-3 hover:shadow-xl
+                 border border-gray-200
+                 rounded-[80px_0px_80px_0px]"
+                 >
                 {/* LEFT → RIGHT GLOW */}
                 <span
                   className="pointer-events-none absolute inset-y-0 left-0 w-0
-                   bg-emerald-400/30 blur-xl
-                   transition-all duration-700 ease-out
-                   group-hover:w-full"
+                  bg-emerald-400/30 blur-xl
+                  transition-all duration-700 ease-out
+                  group-hover:w-full"
                 />
 
                 {/* CONTENT */}
-                <div className="relative z-10">
+                <div className="relative z-10 pr-6">
                   <Icon className={`${card.iconColor} text-3xl mb-4`} />
 
                   <h4 className="text-xl font-semibold mb-2 text-gray-900">
