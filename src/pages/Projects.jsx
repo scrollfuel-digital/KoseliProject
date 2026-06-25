@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { HiXMark, HiMapPin } from "react-icons/hi2";
+import ProjectForm from '../components/ProjectForm'
+import { useNavigate } from "react-router-dom";
 
 export default function Projects() {
   const [selectedProject, setSelectedProject] = useState(null);
-
+  const navigate = useNavigate();
   const projects = [
     {
       id: 1,
@@ -213,7 +215,7 @@ export default function Projects() {
                       </ul>
                     </div>
 
-                    <button className="w-full bg-green-600 hover:bg-green-700 text-white py-4 rounded-lg font-semibold text-lg transition">
+                    <button className="w-full bg-green-600 hover:bg-green-700 text-white py-4 rounded-lg font-semibold text-lg transition"   onClick={() => navigate("/projectsform")}>
                       Contact for Site Visit
                     </button>
                   </div>
