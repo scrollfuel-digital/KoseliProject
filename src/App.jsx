@@ -5,6 +5,7 @@ import Projects from './pages/Projects'
 import ContactUs from './pages/ContactUs'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import ProjectForm from './components/ProjectForm'
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
       <Route path="/about" element={<About />} />
       <Route path="/projects" element={<Projects />} />
       <Route path="/contact" element={<ContactUs />} />
+      <Route path="/projectsform" element={<ProjectForm />} />
     </Routes>
     <Footer />
     </>
