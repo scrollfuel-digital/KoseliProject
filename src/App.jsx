@@ -10,15 +10,16 @@ import ProjectForm from './components/ProjectForm'
 export default function App() {
   return (
     <>
-    <Navbar />
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/projects" element={<Projects />} />
-      <Route path="/contact" element={<ContactUs />} />
-      <Route path="/projectsform" element={<ProjectForm />} />
-    </Routes>
-    <Footer />
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/contact" element={<ContactUs />} />
+        <Route path="/projectForm" element={<ProjectForm />} />
+        
+      </Routes>
+      <Footer />
     </>
   )
 }
