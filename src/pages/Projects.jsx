@@ -3,6 +3,7 @@ import { HiXMark, HiMapPin } from "react-icons/hi2";
 import ProjectForm from '../components/ProjectForm'
 import { useNavigate } from "react-router-dom";
 
+
 export default function Projects() {
   const [selectedProject, setSelectedProject] = useState(null);
   const navigate = useNavigate();
@@ -10,6 +11,7 @@ export default function Projects() {
     {
       id: 1,
       title: "Green Valley Farm Plot",
+      description: "A serene plot surrounded by lush greenery, perfect for agriculture and residential purposes.",
       image:
         "https://images.unsplash.com/photo-1500382017468-7049e00a7a82?w=600&h=400&fit=crop",
       size: "1000 sq ft",
@@ -25,6 +27,7 @@ export default function Projects() {
     {
       id: 2,
       title: "Riverside Estate Plot",
+      description: "A serene plot surrounded by lush greenery, perfect for agriculture and residential purposes.",
       image:
         "https://images.unsplash.com/photo-1464207687429-7505649dae38?w=600&h=400&fit=crop",
       size: "1500 sq ft",
@@ -40,6 +43,7 @@ export default function Projects() {
     {
       id: 3,
       title: "Sunrise Hills Premium",
+      description: "A serene plot surrounded by lush greenery, perfect for agriculture and residential purposes.",
       image:
         "https://images.unsplash.com/photo-1517457373614-b7152f800fd1?w=600&h=400&fit=crop",
       size: "2000 sq ft",
@@ -55,6 +59,7 @@ export default function Projects() {
     {
       id: 4,
       title: "Golden Meadows",
+      description: "A serene plot surrounded by lush greenery, perfect for agriculture and residential purposes.",
       image:
         "https://images.unsplash.com/photo-1500382017468-7049e00a7a82?w=600&h=400&fit=crop",
       size: "1200 sq ft",
@@ -70,6 +75,7 @@ export default function Projects() {
     {
       id: 5,
       title: "Mountain View Estate",
+      description: "A serene plot surrounded by lush greenery, perfect for agriculture and residential purposes.",
       image:
         "https://images.unsplash.com/photo-1464207687429-7505649dae38?w=600&h=400&fit=crop",
       size: "1800 sq ft",
@@ -85,6 +91,7 @@ export default function Projects() {
     {
       id: 6,
       title: "Lakeside Paradise",
+      description: "A serene plot surrounded by lush greenery, perfect for agriculture and residential purposes.",
       image:
         "https://images.unsplash.com/photo-1517457373614-b7152f800fd1?w=600&h=400&fit=crop",
       size: "2500 sq ft",
@@ -154,70 +161,40 @@ export default function Projects() {
           {/* Modal */}
           {selectedProject && (
             <>
+              {/* Backdrop */}
               <div
                 onClick={() => setSelectedProject(null)}
-                className="fixed inset-0 bg-black/60 z-40"
+                className="fixed inset-0 bg-black/70 backdrop-blur-sm z-40"
               />
-              <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-                <div className="bg-white rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto relative">
+              <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6">
+                <div className="bg-white rounded-3xl max-w-7xl w-full max-h-[92vh] overflow-y-auto relative shadow-2xl">
+
+                  {/* Close Button */}
                   <button
                     onClick={() => setSelectedProject(null)}
-                    className="absolute top-4 right-4 bg-red-500 hover:bg-red-600 text-white p-2 rounded-full z-10"
+                    className="absolute top-3 right-3 bg-white/90 hover:bg-white text-gray-700 hover:text-red-500 p-1.5 rounded-full z-20 shadow-md transition-all"
                   >
-                    <HiXMark size={24} />
+                    <HiXMark size={20} />
                   </button>
 
-                  <img
-                    src={selectedProject.image}
-                    alt={selectedProject.title}
-                    className="w-full h-80 object-cover rounded-t-2xl"
-                  />
-
-                  <div className="p-4 sm:p-8">
-                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                      {selectedProject.title}
-                    </h2>
-
-                    <div className="flex items-center text-green-600 font-semibold mb-6 text-lg">
-                      <HiMapPin className="mr-2" size={24} />
-                      {selectedProject.location}
+                  {/* Top: Image with gradient overlay */}
+                  <div className="relative">
+                    <img
+                      src={selectedProject.image}
+                      alt={selectedProject.title}
+                      className="w-full h-48 sm:h-64 object-cover rounded-t-3xl"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent rounded-t-3xl" />
+                    <div className="absolute bottom-4 left-5">
+                      <span className="inline-flex items-center gap-1.5 text-xs font-semibold bg-green-600 text-white px-3 py-1 rounded-full">
+                        <HiMapPin size={12} /> {selectedProject.location}
+                      </span>
                     </div>
+                  </div>
 
-                    <div className="grid grid-cols-2 gap-4 sm:gap-6 mb-8 bg-gray-50 p-4 sm:p-6 rounded-xl">
-                      <div>
-                        <p className="text-gray-600 text-sm mb-1">Plot Size</p>
-                        <p className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900">
-                          {selectedProject.size}
-                        </p>
-                      </div>
-                      <div>
-                        <p className="text-gray-600 text-sm mb-1">Price</p>
-                        <p className="text-xl sm:text-2xl md:text-3xl font-bold text-green-600">
-                          {selectedProject.price}
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="mb-8">
-                      <h3 className="text-2xl font-semibold text-gray-900 mb-4">
-                        Key Features
-                      </h3>
-                      <ul className="grid grid-cols-2 gap-3">
-                        {selectedProject.features.map((feature, i) => (
-                          <li
-                            key={i}
-                            className="flex items-center text-gray-700"
-                          >
-                            <span className="w-2 h-2 bg-green-600 rounded-full mr-3"></span>
-                            {feature}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    <button className="w-full bg-green-600 hover:bg-green-700 text-white py-4 rounded-lg font-semibold text-lg transition"   onClick={() => navigate("/projectsform")}>
-                      Contact for Site Visit
-                    </button>
+                  {/* Bottom: Left info + Right form */}
+                  <div className="p-4 sm:p-6">
+                    <ProjectForm project={selectedProject} />
                   </div>
                 </div>
               </div>
