@@ -152,12 +152,28 @@ export default function SiteVisitForm({ project }) {
               address: "",
             }}
             validationSchema={validationSchema}
-            onSubmit={(values) => {
-              console.log("Form Data:", {
+            onSubmit={async (values, { setSubmitting }) => {
+              const payload = {
                 ...values,
-                plotName: project.title,
-              });
-              setSubmitted(true);
+                projectTitle: project.title,
+                projectLocation: project.location,
+              };
+              console.log("Site Visit Form Submitted:", payload);
+              try {
+                const res = await fetch("http://localhost:3000/api/site-visit", {
+                  method: "POST",
+                  headers: { "Content-Type": "application/json" },
+                  body: JSON.stringify(payload),
+                });
+                const data = await res.json();
+                console.log("Site Visit Saved to DB:", data);
+                setSubmitted(true);
+              } catch (err) {
+                console.error("Submission failed:", err);
+                setSubmitted(true);
+              } finally {
+                setSubmitting(false);
+              }
             }}
           >
             {({ setFieldValue, values }) => (
@@ -202,25 +218,10 @@ export default function SiteVisitForm({ project }) {
                         placeholder="9876543210"
                       />
                     </div>
+                    <ErrorMessage name="phone" component="p" className="text-red-500 text-xs mt-1" />
                   </div>
 
-                  <div>
-                    <label className="block text-xs font-semibold text-gray-600 mb-1 uppercase tracking-wide">
-                      Email
-                    </label>
-                    <div className="relative">
-                      <Mail
-                        className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
-                        size={15}
-                      />
-                      <Field
-                        name="email"
-                        type="email"
-                        className={inputClass}
-                        placeholder="you@email.com"
-                      />
-                    </div>
-                  </div>
+                  
                 </div>
 
                 {/* Date */}
@@ -233,6 +234,7 @@ export default function SiteVisitForm({ project }) {
                     name="date"
                     className="w-full px-4 py-2.5 border border-gray-200 rounded-lg text-sm bg-gray-50 focus:bg-white focus:border-green-500 focus:ring-2 focus:ring-green-100 outline-none transition"
                   />
+                  <ErrorMessage name="date" component="p" className="text-red-500 text-xs mt-1" />
                 </div>
 
                 {/* Time */}
@@ -258,6 +260,7 @@ export default function SiteVisitForm({ project }) {
                       </button>
                     ))}
                   </div>
+                  <ErrorMessage name="time" component="p" className="text-red-500 text-xs mt-1" />
                 </div>
 
                 {/* Address */}
