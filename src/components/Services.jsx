@@ -1,4 +1,3 @@
-import { h2 } from "framer-motion/client";
 import { HiHome, HiDocumentText, HiLightBulb, HiMapPin } from "react-icons/hi2";
 
 export default function Services() {

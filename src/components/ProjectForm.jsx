@@ -1,3 +1,4 @@
+import api from "../utils/api";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import {
@@ -158,15 +159,10 @@ export default function SiteVisitForm({ project }) {
                 projectTitle: project.title,
                 projectLocation: project.location,
               };
-              console.log("Site Visit Form Submitted:", payload);
               try {
-                const res = await fetch("http://localhost:3000/api/site-visit", {
-                  method: "POST",
-                  headers: { "Content-Type": "application/json" },
-                  body: JSON.stringify(payload),
-                });
-                const data = await res.json();
-                console.log("Site Visit Saved to DB:", data);
+                // POST to /api/site-visit using shared axios instance
+                const { data } = await api.post("/site-visit", payload);
+                console.log("Saved:", data);
                 setSubmitted(true);
               } catch (err) {
                 console.error("Submission failed:", err);

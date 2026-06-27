@@ -113,7 +113,7 @@ export default function Projects() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-5xl font-bold mt-4">
-              Our <span className="text-green-700 italic">Projects</span>
+              Our <span className="text-green-700">Projects</span>
             </h2>
             <p className="text-xl text-gray-600 pt-4">
               Explore our premium farm plot listings

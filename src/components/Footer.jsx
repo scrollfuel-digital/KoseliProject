@@ -4,8 +4,7 @@ import { HiPhone, HiEnvelope, HiMapPin } from 'react-icons/hi2'
 
 export default function Footer() {
   return (
-    <footer className="text-white py-12 px-4 relative" style={{ backgroundImage: `url(${logo})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
-      <div className="absolute inset-0 bg-gray-900/80" />
+    <footer className="bg-gray-900 text-white py-12 px-4 relative overflow-hidden">
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}

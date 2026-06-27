@@ -1,4 +1,36 @@
 @import "tailwindcss";
+
+html {
+  overflow-x: hidden !important;
+  scroll-behavior: smooth;
+  background-color: #111827;
+}
+
+body {
+  overflow-x: hidden !important;
+  max-width: 100% !important;
+  margin: 0;
+  padding: 0;
+  background-color: #111827;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #ffffff;
+}
+
+footer {
+  margin-bottom: 0 !important;
+  display: block;
+}
+
+* {
+  box-sizing: border-box;
+  min-width: 0;
+}
+
 .hexagon {
   width: 220px;
   height: 250px;

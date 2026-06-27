@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { useState, useRef } from "react";
 
 import logo from "../assets/logo.png";
-import heroimg from "../assets/heroimg.jpg";
 
 function Cursor({ position }) {
   return (
@@ -79,12 +78,10 @@ function NavLinks() {
         About
       </Tab>
 
-      {/* Projects */}
       <li
         className="relative z-10"
         onMouseEnter={(e) => {
           setShowProjectsDropdown(true);
-
           setPosition({
             left: e.currentTarget.offsetLeft,
             width: e.currentTarget.offsetWidth,
@@ -98,8 +95,6 @@ function NavLinks() {
         >
           Projects
         </NavLink>
-
-       
       </li>
 
       <Tab to="/contact" setPosition={setPosition}>
@@ -115,12 +110,16 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-white shadow-md">
+    <nav className="sticky top-0 w-full z-[9999] bg-white shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center w-32 sm:w-40">
-            <img src={logo} alt="Logo" className="h-10 sm:h-12 w-auto object-contain rounded" />
+            <img
+              src={logo}
+              alt="Logo"
+              className="h-10 sm:h-12 w-auto object-contain rounded"
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -165,14 +164,16 @@ export default function Navbar() {
               end
               onClick={() => setMobileOpen(false)}
               className={({ isActive }) =>
-                `block px-4 py-2.5 rounded-lg font-medium text-sm uppercase transition ${
-                  isActive ? "bg-green-500 text-white" : "text-gray-700 hover:bg-gray-100"
+                `block px-4 py-2.5 rounded-lg font-medium text-sm uppercase transition ${isActive
+                  ? "bg-green-500 text-white"
+                  : "text-gray-700 hover:bg-gray-100"
                 }`
               }
             >
               {label}
             </NavLink>
           ))}
+
           <div className="relative pt-2">
             <input
               type="text"

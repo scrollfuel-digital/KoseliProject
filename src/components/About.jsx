@@ -28,10 +28,10 @@ export default function AboutUs() {
   ];
 
   return (
-    <section className="bg-white py-24 px-4">
+    <section className="bg-white py-14 px-4">
       <div className="max-w-6xl mx-auto">
         {/* CENTER HEADING */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-10">
           <span className="inline-flex items-center gap-2 bg-emerald-100 text-emerald-600 px-5 py-2 rounded-full text-sm font-medium mb-6">
             <span className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span>
 

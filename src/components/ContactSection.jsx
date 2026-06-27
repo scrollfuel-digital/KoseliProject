@@ -49,7 +49,7 @@ export default function ContactSection() {
           </p>
 
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-4">
-            Get in <span className="text-green-700 italic">Touch</span>
+            Get in <span className="text-green-700">Touch</span>
           </h2>
 
           <p className="text-gray-600 mt-4 max-w-2xl mx-auto">

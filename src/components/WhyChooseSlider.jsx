@@ -105,7 +105,7 @@ export default function WhyChooseSlider() {
       <div className="overflow-hidden rounded-3xl">
         <div
           ref={trackRef}
-          className="flex transition-transform duration-700 ease-out"
+          className="flex transition-transform duration-900 ease-out"
           style={{
             transform: `translateX(-${activeIndex * 100}%)`,
           }}
@@ -198,11 +198,10 @@ export default function WhyChooseSlider() {
             key={index}
             onClick={() => goToSlide(index)}
             aria-label={`Go to slide ${index + 1}`}
-            className={`h-3 rounded-full transition-all duration-300 ${
-              index === activeIndex
+            className={`h-3 rounded-full transition-all duration-300 ${index === activeIndex
                 ? "w-8 bg-green-600"
                 : "w-3 bg-green-300 hover:bg-green-400"
-            }`}
+              }`}
           />
         ))}
       </div>
