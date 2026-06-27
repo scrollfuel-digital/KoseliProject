@@ -4,6 +4,7 @@ import ProjectForm from '../components/ProjectForm'
 import { useNavigate } from "react-router-dom";
 
 
+
 export default function Projects() {
   const [selectedProject, setSelectedProject] = useState(null);
   const navigate = useNavigate();
@@ -13,7 +14,7 @@ export default function Projects() {
       title: "Green Valley Farm Plot",
       description: "A serene plot surrounded by lush greenery, perfect for agriculture and residential purposes.",
       image:
-        "https://images.unsplash.com/photo-1500382017468-7049e00a7a82?w=600&h=400&fit=crop",
+        "https://i.pinimg.com/736x/1e/f4/63/1ef4630a9380d8420e389f157f039388.jpg",
       size: "1000 sq ft",
       price: "₹5,00,000",
       location: "Green Valley",
@@ -29,7 +30,7 @@ export default function Projects() {
       title: "Riverside Estate Plot",
       description: "A serene plot surrounded by lush greenery, perfect for agriculture and residential purposes.",
       image:
-        "https://images.unsplash.com/photo-1464207687429-7505649dae38?w=600&h=400&fit=crop",
+        "https://i.pinimg.com/736x/31/f1/9a/31f19a4b49e76b5d036826e3afef22ed.jpg",
       size: "1500 sq ft",
       price: "₹8,00,000",
       location: "Riverside Area",
@@ -45,7 +46,7 @@ export default function Projects() {
       title: "Sunrise Hills Premium",
       description: "A serene plot surrounded by lush greenery, perfect for agriculture and residential purposes.",
       image:
-        "https://images.unsplash.com/photo-1517457373614-b7152f800fd1?w=600&h=400&fit=crop",
+        "https://i.pinimg.com/736x/30/f0/83/30f083a9c82af000b5232f6e4bfbb04f.jpg",
       size: "2000 sq ft",
       price: "₹12,00,000",
       location: "Sunrise Hills",
@@ -61,7 +62,7 @@ export default function Projects() {
       title: "Golden Meadows",
       description: "A serene plot surrounded by lush greenery, perfect for agriculture and residential purposes.",
       image:
-        "https://images.unsplash.com/photo-1500382017468-7049e00a7a82?w=600&h=400&fit=crop",
+        "https://i.pinimg.com/736x/d3/ff/a0/d3ffa00f3a67087e395ae3953b61aa1c.jpg",
       size: "1200 sq ft",
       price: "₹6,50,000",
       location: "Golden Meadows",
@@ -93,7 +94,7 @@ export default function Projects() {
       title: "Lakeside Paradise",
       description: "A serene plot surrounded by lush greenery, perfect for agriculture and residential purposes.",
       image:
-        "https://images.unsplash.com/photo-1517457373614-b7152f800fd1?w=600&h=400&fit=crop",
+        "https://i.pinimg.com/736x/a5/6c/08/a56c08bfdd29c3b8760cbe6e174c3f68.jpg",
       size: "2500 sq ft",
       price: "₹15,00,000",
       location: "Lakeside",
