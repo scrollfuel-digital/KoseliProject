@@ -11,7 +11,7 @@ export default function About() {
         <div className="max-w-7xl mx-auto px-4 py-6">
           <div className="text-center">
             <div className="text-black font-bold text-3xl sm:text-4xl md:text-5xl mb-8">
-              About Our <span className="text-green-700 italic">Company</span>
+              About Our <span className="text-green-700">Company</span>
             </div>
 
             <p className="max-w-2xl mx-auto text-lg text-gray-600 leading-relaxed mt-4">

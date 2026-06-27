@@ -6,6 +6,7 @@ import { FaInstagram, FaWhatsapp, FaFacebookF } from "react-icons/fa";
 
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import api from "../utils/api";
 
 export default function ContactUs() {
 
@@ -40,13 +41,17 @@ export default function ContactUs() {
         .required("Message is required"),
     }),
 
-    onSubmit: (values, { resetForm }) => {
-      console.log("Form Submitted:", values);
-
-      // 🔗 API call can be added here
-
-      resetForm();
-      alert("Message sent successfully!");
+    onSubmit: async (values, { resetForm }) => {
+      try {
+        // POST to /api/contact using shared axios instance
+        const { data } = await api.post("/contact", values);
+        console.log("Contact saved:", data);
+        resetForm();
+        alert("Message sent successfully!");
+      } catch (err) {
+        console.error("Submission failed:", err);
+        alert("Something went wrong. Please try again.");
+      }
     },
   });
 
@@ -66,7 +71,7 @@ export default function ContactUs() {
               </p>
 
               <h2 className="text-5xl font-bold mt-4">
-                Get In <span className="text-green-700 italic">Touch</span>
+                Get In <span className="text-green-700">Touch</span>
               </h2>
 
               <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
